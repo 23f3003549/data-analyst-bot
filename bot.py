@@ -1,13 +1,15 @@
 import json
 import time
 import os
+from dotenv import load_dotenv
 from openai import OpenAI
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
 
+load_dotenv()
 # --- fill these in with your own values ---
-TELEGRAM_BOT_TOKEN = "8234442953:AAE-gMAV-D5NoBNEZtlskgOPaLEXx2XY7f8"
-AIPIPE_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjIzZjMwMDM1NDlAZHMuc3R1ZHkuaWl0bS5hYy5pbiIsImlhdCI6MTc4NTQxNjQ3NSwiaXNzIjoiaHR0cHM6Ly9haXBpcGUub3JnIiwiYXVkIjoiYWlwaXBlLWFwaSIsImV4cCI6MTc4NjAyMTI3NX0.T7_fmcNGzqeZAtDflsmKgu1vhB_cjC1Pfg0udHRe2nY"
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+AIPIPE_TOKEN = os.getenv("AIPIPE_TOKEN")
 LOG_URL = "https://raw.githubusercontent.com/23f3003549/data-analyst-bot/refs/heads/main/run.jsonl"  # see Step 5 — where run.jsonl will be hosted
 # -------------------------------------------
 
